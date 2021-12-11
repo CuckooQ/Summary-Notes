@@ -10,7 +10,7 @@
 
 #### [3. Semantic Tags](#Semantic-Tags)
 
-#### [4. Inline / Block Tag](#Inline-/-Block-Tag)
+#### [4. Inline , Block Tag](#Inline-Block-Tag)
 
 #### [5. HTML Entities](#HTML-Entities)
 
@@ -206,7 +206,7 @@
 
 <br>
 
-## Inline / Block Tag
+## Inline, Block Tag
 
 ### Inline Tag
 
