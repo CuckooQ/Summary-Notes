@@ -63,6 +63,8 @@
 - [Grid](#Grid)
 - [Flex Box](#Flex-Box)
 
+#### [24. SCSS](#SCSS)
+
 <br>
 
 ## Rule Set
@@ -701,5 +703,26 @@
   - flex-end
   - center
   - baseline
+
+<br>
+
+## SCSS
+
+### 정의
+
+- CSS Pre-processor
+
+### 기능 & 도구
+
+- 주석 //
+- 변수 $var
+- 연산자
+- 내장함수
+- 함수 @function @return
+- 중첩
+- 상속 @extend
+- 믹스인 @mixin @include
+- 조건문 @if @else
+- 반복문 @for @each @while
 
 <br>
