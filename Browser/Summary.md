@@ -136,7 +136,7 @@
   SameSite: Strict,  
   Domain속성 등의 보안 설정 필요.
 
-  ### Local Storage
+### Local Storage
 
 - 브라우저 로컬에서 관리.
 - 같은 도메인의 서버로 임의 전송.
