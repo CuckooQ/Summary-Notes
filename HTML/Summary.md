@@ -55,6 +55,8 @@
   - src
   - defer
   - async
+  - type
+    - module
 - link
   - rel
     - stylesheet
