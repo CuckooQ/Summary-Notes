@@ -41,35 +41,146 @@
 
 #### [14. 프로미스](#프로미스)
 
+- [정의](#정의)
+- [Promise Executor](#Promise-Executor)
+- [상태](#상태)
+- [Rejection Events](#Rejection-Events)
+- [함수](#함수)
+- [Callback Hell](#Callback-Hell)
+- [Then Chaining](#Then-Chaining)
+- [async & await](#async-&-await)
+
 #### [15. JSON](#JSON)
 
 #### [16. 숫자](#숫자)
 
+- [진수](#진수)
+- [Numeric Separator](#Numeric-Separator)
+- [Safe Number](#Safe-Number)
+- [함수](#함수)
+- [자릿수별 배열 생성 방법](#자릿수별-배열-생성-방법)
+
 #### [17. Math함수](#Math함수)
+
+- [제곱 & 제곱근](#제곱-&-제곱근)
+- [로그](#로그)
+- [반올림](#반올림)
+- [최대 & 최소](#최대-&-최소)
+- [기타](#기타)
 
 #### [18. 날짜](#날짜)
 
+- [구성 요소](#구성-요소)
+- [생성 방법](#생성-방법)
+- [함수](#함수)
+- [현재 날짜](#현재-날짜)
+- [경과시간 계산 방법](#경과시간-계산-방법)
+
 #### [19. 문자열](#문자열)
+
+- [길이](#길이)
+- [인덱싱](#인덱싱)
+- [Template Literal](#Template-Literal)
+- [Multi Line](#Multi-Line)
+- [Escape Characters](#Escape-Characters)
+- [함수](#함수)
 
 #### [20. 배열](#배열)
 
+- [길이](#길이)
+- [인덱싱](#인덱싱)
+- [생성 방법](#생성-방법)
+- [병합](#병합)
+- [변경](#변경)
+- [함수](#함수)
+
 #### [21. 맵](#맵)
+
+- [생성](#생성)
+- [길이](#길이)
+- [추가 & 변경](#추가-&-변경)
+- [가져오기](#가져오기)
+- [삭제](#삭제)
+- [존재 여부](#존재-여부)
 
 #### [22. 셋](#셋)
 
+- [생성](#생성)
+- [길이](#길이)
+- [추가](#추가)
+- [삭제](#삭제)
+- [존재 여부](#존재-여부)
+
 #### [23. 객체](#객체)
+
+- [함수](#함수)
+- [비교](#비교)
+- [Rest & Spread](#Rest-&-Spread)
+- [Optional Chaining](#Optional-Chaining)
 
 #### [24. 반복기](#반복기)
 
+- [Iteration Protocol](#Iteration-Protocol)
+- [Iterable](#Iterable)
+- [Iterator](#Iterator)
+
 #### [25. 생성기](#생성기)
+
+- [정의](#정의)
+- [형태](#형태)
 
 #### [26. 프록시](#프록시)
 
+- [정의](#정의)
+- [형태](#형태)
+- [트랩](#트랩)
+- [Revocable Proxy](#Revocable-Proxy)
+
 #### [27. Reflect](#Reflect)
+
+- [정의](#정의)
+- [함수](#함수)
 
 #### [28. 프로토타입](#프로토타입)
 
 #### [29. 모듈](#모듈)
+
+- [정의](#정의)
+- [조건](#조건)
+- [import & export](#import-&-export)
+
+#### [30. 이벤트](#이벤트)
+
+- [Event Bubbling](#Event-Bubbling)
+- [Event Capturing](#Event-Capturing)
+- [Event Delegation](#Event-Delegation)
+- [stopProgation](#stopProgation)
+- [preventDefault](#preventDefault)
+- [target](#target)
+- [currentTarget](#currentTarget)
+
+#### [31. AJAX](#AJAX)
+
+- [정의](#정의)
+- [특징](#특징)
+
+#### [32. Strict Mode](#Strict-Mode)
+
+- [정의](#정의)
+- [적용 방법](#적용-방법)
+- [특징](#특징)
+
+#### [33. 메모리 관리](#메로리-관리)
+
+- [메모리 생존 주기](#메모리-생존-주기)
+- [메모리 할당 유형](#메모리-할당-유형)
+- [Garbage Collection](#Garbage-Collection)
+
+#### [34. 프로세스 관리](#프로세스-관리)
+
+- [이벤트 루프](#이벤트-루프)
+- [런타임 모델](#런타임-모델)
+- [Execution Context](#Execution-Context)
 
 <br>
 
@@ -351,7 +462,7 @@
 - Then Chaining
   - then함수 체이닝이 가능한 특징
   - Callback Hell 완화 가능
-- async / await
+- async & await
 
 <br>
 
@@ -391,7 +502,7 @@
 - num.toFixed(decimalPoint)
   - 소수점 decimalPoint까지 가지는 문자열 반환
 
-### 자릿수 별 배열 생성 방법
+### 자릿수별 배열 생성 방법
 
 - num.toString().split("")
 
@@ -399,7 +510,7 @@
 
 ## Math함수
 
-### 제곱/제곱근
+### 제곱 & 제곱근
 
 - Math.pow(valuel, value2)
 - Math.sqrt(value)
@@ -417,7 +528,7 @@
 - Math.ceil(value)
 - Math.floor(value)
 
-### 최대/최소
+### 최대 & 최소
 
 - Math.max(...)
 - Math.min(...)
@@ -672,7 +783,7 @@
 
 - size
 
-### 추가, 수정
+### 추가 & 변경
 
 - set(key, val)
 
@@ -887,5 +998,142 @@
 - html 파일에서 script 태그의 type속성에 'module' 설정
 
 ### import & export
+
+<br>
+
+## 이벤트
+
+### Event Bublling
+
+- 요소의 이벤트가 요소의 상위 요소들까지 전달되는 현상
+
+### Event Capturing
+
+- 요소의 이벤트가 자식 요소들까지 전달되는 현상
+- addEventListener함수의 매개변수중 options의 capture속성에 true로 설정
+
+### Event Delegation
+
+- 하위 요소들의 이벤트를 상위 요소에서 제어하는 방식
+
+### stopProgation
+
+- 이벤트 버블링 & 캡처링 방지 함수
+
+### preventDefault
+
+- 이벤트가 발생한 요소의 기본 동작 실행 방지 함수
+
+### target
+
+- 이벤트가 발생한 요소
+
+### currentTarget
+
+- 이벤트를 다루는 요소
+
+<br>
+
+## AJAX
+
+### 정의
+
+- Asynchronous Javascript And Xml
+- 비동기적으로 서버와 클라이언트가 데이터를 교환할 수 있는 통신 방식
+
+### 특징
+
+- 전체 페이지를 갱신하지 않고 일부만 갱신 가능
+- XML보다 JSON을 더 많이 사용
+
+## Strict Mode
+
+### 정의
+
+- 자바스크립트 코드의 실행을 엄격하게 관리하는 모드
+
+### 적용 방법
+
+- 스크립트 파일 최상단에 'use strict' 추가
+
+### 특징
+
+- 최적화 용이
+- 모듈과 클래스의 경우 자동 적용
+
+<br>
+
+## 메모리 관리
+
+### 메모리 생존 주기
+
+- 필요한 경우 할당
+- 읽기, 쓰기
+- 필요없어진 경우 해제
+
+### 메모리 할당 유형
+
+- 값 초기화
+- 함수 호출
+
+### Garbage Collection
+
+#### 정의
+
+- 메모리 관리 수행 프로세스
+
+#### 특징
+
+- 수동으로 메모리 해제 불가
+
+#### 알고리즘
+
+- 참조-세기 알고리즘
+  - Reference-counting Algorithm
+  - 더 이상 필요 없는 객체 = 아무도 참조하지 않는 객체
+- 표시하고-쓸기 알고리즘
+  - Mark-and-sweep Algorithm
+  - 더 이상 필요 없는 객체 = 닿을 수 없는 객체
+
+<br>
+
+## 프로세스 관리
+
+### 이벤트 루프
+
+#### 정의
+
+- 자바스크립트의 작업 루프
+
+#### 기능
+
+- 동시성 모델 지원
+
+### 런타입 모델
+
+#### Call Stack
+
+- 작업을 쌓아놓는 영역
+- 최대 허용치 존재
+- 최대 허용치를 넘는 경우 'Maximum Size Exceeded' 에러 발생
+
+#### Callback Queue
+
+- 비동기 처리를 임시로 보관하는 영역
+- 콜 스택이 비어있을 경우 처리를 콜백 큐에서 콜 스택으로 이동시키는 틱 발생
+
+#### Memory Heap
+
+- 객체들이 할당되는 메모리 영역
+
+### Execution Context
+
+#### 정의
+
+- 자바스크립트 코드가 실행되는 작업
+
+#### 특징
+
+- 콜 스택에 저장
 
 <br>
