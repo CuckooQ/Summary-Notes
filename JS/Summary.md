@@ -14,8 +14,8 @@
 
 #### [5. 데이터 타입](#데이터-타입)
 
-- [Primitive Type](#Primitive-Type)
-- [Reference Type](#Reference-Type)
+- Primitive Type
+- Reference Type
 
 #### [6. 리터럴](#리터럴)
 
@@ -25,11 +25,11 @@
 
 #### [9. 함수](#함수)
 
-- [구성](#구성)
-- [정의 방법](#정의-방법)
-- [특징](#특징)
-- [종류](#종류)
-- [자주 사용되는 함수](#자주-사용되는-함수)
+- 구성
+- 정의 방법
+- 특징
+- 종류
+- 자주 사용되는 함수
 
 #### [10. 연산자](#연산자)
 
@@ -41,146 +41,146 @@
 
 #### [14. 프로미스](#프로미스)
 
-- [정의](#정의)
-- [Promise Executor](#Promise-Executor)
-- [상태](#상태)
-- [Rejection Events](#Rejection-Events)
-- [함수](#함수)
-- [Callback Hell](#Callback-Hell)
-- [Then Chaining](#Then-Chaining)
-- [async & await](#async-&-await)
+- 정의
+- Promise Executor
+- 상태
+- Rejection Events
+- 함수
+- Callback Hell
+- Then Chaining
+- async & await
 
 #### [15. JSON](#JSON)
 
 #### [16. 숫자](#숫자)
 
-- [진수](#진수)
-- [Numeric Separator](#Numeric-Separator)
-- [Safe Number](#Safe-Number)
-- [함수](#함수)
-- [자릿수별 배열 생성 방법](#자릿수별-배열-생성-방법)
+- 진수
+- Numeric Separator
+- Safe Number
+- 함수
+- 자릿수별 배열 생성 방법
 
 #### [17. Math함수](#Math함수)
 
-- [제곱 & 제곱근](#제곱-&-제곱근)
-- [로그](#로그)
-- [반올림](#반올림)
-- [최대 & 최소](#최대-&-최소)
-- [기타](#기타)
+- 제곱 & 제곱근
+- 로그
+- 반올림
+- 최대 & 최소
+- 기타
 
 #### [18. 날짜](#날짜)
 
-- [구성 요소](#구성-요소)
-- [생성 방법](#생성-방법)
-- [함수](#함수)
-- [현재 날짜](#현재-날짜)
-- [경과시간 계산 방법](#경과시간-계산-방법)
+- 구성 요소
+- 생성 방법
+- 함수
+- 현재 날짜
+- 경과시간 계산 방법
 
 #### [19. 문자열](#문자열)
 
-- [길이](#길이)
-- [인덱싱](#인덱싱)
-- [Template Literal](#Template-Literal)
-- [Multi Line](#Multi-Line)
-- [Escape Characters](#Escape-Characters)
-- [함수](#함수)
+- 길이
+- 인덱싱
+- Template Literal
+- Multi Line
+- Escape Characters
+- 함수
 
 #### [20. 배열](#배열)
 
-- [길이](#길이)
-- [인덱싱](#인덱싱)
-- [생성 방법](#생성-방법)
-- [병합](#병합)
-- [변경](#변경)
-- [함수](#함수)
+- 길이
+- 인덱싱
+- 생성 방법
+- 병합
+- 변경
+- 함수
 
 #### [21. 맵](#맵)
 
-- [생성](#생성)
-- [길이](#길이)
-- [추가 & 변경](#추가-&-변경)
-- [가져오기](#가져오기)
-- [삭제](#삭제)
-- [존재 여부](#존재-여부)
+- 생성
+- 길이
+- 추가 & 변경
+- 가져오기
+- 삭제
+- 존재 여부
 
 #### [22. 셋](#셋)
 
-- [생성](#생성)
-- [길이](#길이)
-- [추가](#추가)
-- [삭제](#삭제)
-- [존재 여부](#존재-여부)
+- 생성
+- 길이
+- 추가
+- 삭제
+- 존재 여부
 
 #### [23. 객체](#객체)
 
-- [함수](#함수)
-- [비교](#비교)
-- [Rest & Spread](#Rest-&-Spread)
-- [Optional Chaining](#Optional-Chaining)
+- 함수
+- 비교
+- Rest & Spread
+- Optional Chaining
 
 #### [24. 반복기](#반복기)
 
-- [Iteration Protocol](#Iteration-Protocol)
-- [Iterable](#Iterable)
-- [Iterator](#Iterator)
+- Iteration Protocol
+- Iterable
+- Iterator
 
 #### [25. 생성기](#생성기)
 
-- [정의](#정의)
-- [형태](#형태)
+- 정의
+- 형태
 
 #### [26. 프록시](#프록시)
 
-- [정의](#정의)
-- [형태](#형태)
-- [트랩](#트랩)
-- [Revocable Proxy](#Revocable-Proxy)
+- 정의
+- 형태
+- 트랩
+- Revocable Proxy
 
 #### [27. Reflect](#Reflect)
 
-- [정의](#정의)
-- [함수](#함수)
+- 정의
+- 함수
 
 #### [28. 프로토타입](#프로토타입)
 
 #### [29. 모듈](#모듈)
 
-- [정의](#정의)
-- [조건](#조건)
-- [import & export](#import-&-export)
+- 정의
+- 조건
+- import & export
 
 #### [30. 이벤트](#이벤트)
 
-- [Event Bubbling](#Event-Bubbling)
-- [Event Capturing](#Event-Capturing)
-- [Event Delegation](#Event-Delegation)
-- [stopProgation](#stopProgation)
-- [preventDefault](#preventDefault)
-- [target](#target)
-- [currentTarget](#currentTarget)
+- Event Bubbling
+- Event Capturing
+- Event Delegation
+- stopProgation
+- preventDefault
+- target
+- currentTarget
 
 #### [31. AJAX](#AJAX)
 
-- [정의](#정의)
-- [특징](#특징)
+- 정의
+- 특징
 
 #### [32. Strict Mode](#Strict-Mode)
 
-- [정의](#정의)
-- [적용 방법](#적용-방법)
-- [특징](#특징)
+- 정의
+- 적용 방법
+- 특징
 
 #### [33. 메모리 관리](#메로리-관리)
 
-- [메모리 생존 주기](#메모리-생존-주기)
-- [메모리 할당 유형](#메모리-할당-유형)
-- [Garbage Collection](#Garbage-Collection)
+- 메모리 생존 주기
+- 메모리 할당 유형
+- Garbage Collection
 
 #### [34. 프로세스 관리](#프로세스-관리)
 
-- [이벤트 루프](#이벤트-루프)
-- [런타임 모델](#런타임-모델)
-- [Execution Context](#Execution-Context)
+- 이벤트 루프
+- 런타임 모델
+- Execution Context
 
 <br>
 
