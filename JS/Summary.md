@@ -344,6 +344,7 @@
   - bind, call, apply함수 사용 불가
   - 생성자로 사용 불가
 - Annonymous Function
+  - 함수명을 정의하지 않는 함수
 - Callback Function
   - 다른 함수의 매개변수로서 사용되는 함수
 - Constructor Function
