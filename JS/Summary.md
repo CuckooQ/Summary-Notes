@@ -209,6 +209,7 @@
 ## 선언
 
 - var
+  - 재선언 가능
 - let
 - const
 
@@ -251,7 +252,10 @@
 - String
 - Symbol
 - Null
+  - 빈 값
+  - 하위호환 유지를 위해 typeof에서는 object로 출력
 - Undefined
+  - 할당되지 않은 값
 
 ### Reference Type
 
@@ -335,6 +339,10 @@
 
 - Arrow Function
   - const foo = () => {}
+  - this가 언제나 상위 스코프의 this 의미, 변경 불가
+  - arguments 자동 정의X
+  - bind, call, apply함수 사용 불가
+  - 생성자로 사용 불가
 - Annonymous Function
   - 함수명을 정의하지 않는 함수
 - Callback Function
