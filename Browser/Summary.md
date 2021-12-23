@@ -145,8 +145,8 @@
 - 만료기한 없음.
 - 제한 용량 5mb.
 - 문자열의 키와 값 데이터.
-- sessionStorage.getItem(key)
-- sessionStorage.setItem(key, value)
+- localStorage.getItem(key)
+- localStorage.setItem(key, value)
 
 ### Session Storage
 
@@ -155,8 +155,8 @@
 - 탭을 닫거나 브라우저 종료 시 삭제.
 - 제한 용량 5mb.
 - 문자열의 키와 값 데이터.
-- localStorage.getItem(key)
-- localStorage.setItem(key, value)
+- sessionStorage.getItem(key)
+- sessionStorage.setItem(key, value)
 
 <br>
 
