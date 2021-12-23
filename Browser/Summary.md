@@ -80,9 +80,9 @@
 - DOM & CSSOM Converting.
 - Render Tree Making using DOM & CSSOM.
 - Render Tree Layouting.
-- Render Tree Painting & Composition.
+- Render Tree Painting & Compositing.
 
-### **Render Tree Painting & Composition**
+### **Render Tree Painting & Compositing**
 
 - 요소를 픽셀로 변환해서 레이어를 만들고, 여러 레이어를 합성하는 과정.
 
