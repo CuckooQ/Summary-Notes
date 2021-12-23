@@ -203,9 +203,17 @@
 
 ## 지연 로드 구현
 
+### Vanilla JS
+
 - 요소의 소스 URL을 src속성이 아닌 data-src속성에 지정.
 - InteractionObserver API를 이용해서, 스크롤, 화면 크기 변경, 방향 전환 이벤트로 인해 뷰포트상에서 지정한 범위에 들어오는 경우를 캐치.
 - data-src의 URL을 src속성의 값으로 지정.
+
+### React
+
+- boolean 타입의 state를 false로 초기값을 설정해서 안 보이게 하는 컴포넌트 작성
+- state의 값을 true로 변경하는 보이게 하는 함수 작성
+- InteractionObserver API를 이용한 훅을 생성해서 콜백 함수로 보이게 하는 함수 지정
 
 <br>
 
