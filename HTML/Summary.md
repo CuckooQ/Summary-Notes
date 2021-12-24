@@ -343,15 +343,21 @@
 - onpause
 - onended
 - ontimeupdate
+  - 재생 위치가 변경된 경우 이벤트
 - onvolumechange
 - onratechange
 - oncuechange
+  - 트랜 요소가 변경된 경우 이벤트
 - ondurationchange
 - onseeking
+  - 미디어의 속성 변경이 시작된 경우 이벤트
 - onseeked
+  - 미디어의 속성이 변경된 경우 이벤트
 - onerror
 - onwaiting
+  - 미디어 재생 도중 버퍼링이 발생된 경우 이벤트
 - onemptied
+  - 미디어를 갑자기 사용할 수 없게 된 경우 이벤트
 
 ### Misc
 
