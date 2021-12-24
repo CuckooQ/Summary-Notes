@@ -50,6 +50,10 @@
 
 #### [20. Box Model](#Box-Model)
 
+- 구성
+- 기타 프로퍼티
+- 특징
+
 #### [21. Placement](#Placement)
 
 - [Float](#Float)
@@ -188,7 +192,7 @@
 
 - 정교하고 다양한 색상 표현 가능.
 
-### 단점
+#### 단점
 
 - 확대 / 축소 시 계단 현상, 품질 저하 발생.
 
@@ -311,7 +315,7 @@
 ## Background
 
 - background-attachment
-  - scroll
+  - scroll (default)
   - fixed
 - background-color
 - background-image
@@ -320,7 +324,7 @@
 - background-position
   - direction1 direction2
 - background-repeat
-  - repeat
+  - repeat (default)
   - repeat-x
   - repeat-y
   - no-repeat
@@ -360,7 +364,7 @@
 ### 3D 변환 함수
 
 - rotateX(deg)
-- rtateY(deg)
+- rotateY(deg)
 - perspective(distance)
   - 관찰 대상에 원근 거리 적용
 
@@ -370,7 +374,7 @@
 
 - backface-visibility
 
-### value
+#### value
 
 - visible
 - hidden
@@ -427,7 +431,6 @@
   - pre-line
     - 연속 공백 그대로 표시
     - 긴 줄 줄바꿈 표시
-      <br>
 - text-overflow
   - clip
     - 자르기
@@ -438,6 +441,8 @@
   - keep-all
 - line-break
 - overflow-wrap
+  - normal
+  - break-word
 
 <br>
 
@@ -486,7 +491,7 @@
 - static
 - relative
 - absolute
-  - displa:block으로 자동 설정
+  - display: block으로 자동 설정
   - 가로 너비를 최소로 설정
 - fixed
   - display: block으로 자동 설정
@@ -494,7 +499,7 @@
 - sticky
   - top, right, bottom, left 프로퍼티 설정 필요
   - 부모 요소에 height 프로퍼티 설정 필요
-  - 부모 요소에 overflow가 있을 경우 사용 불가
+  - 부모 요소에 overflow 프로퍼티가 있을 경우 사용 불가
 
 ### Centering
 
@@ -505,7 +510,7 @@
 - width: n;
 - margin: 0 auto;
 
-#### 가로 세로 중앙 정렬
+#### 가로 세로 중앙 정렬 1
 
 - position: absolute;
 - top: 0;
@@ -516,7 +521,7 @@
 - height: n;
 - margin: auto;
 
-#### 가로 세로 중앙 정렬
+#### 가로 세로 중앙 정렬 2
 
 - display: flex;
 - justify-content: center;
