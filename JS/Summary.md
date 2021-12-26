@@ -1,4 +1,4 @@
-# Javascript
+# JavaScript
 
 <br>
 
@@ -251,6 +251,7 @@
 - BigInt
 - String
 - Symbol
+  - 변경 불가능한 고유한 값
 - Null
   - 빈 값
   - 하위호환 유지를 위해 typeof에서는 object로 출력
@@ -297,7 +298,7 @@
 
 - for
 - for attr in obj
-- for val of arr
+- for val of iterable obj
 - while
 - do while
 - continue
@@ -629,9 +630,10 @@
 
 ### 함수
 
-#### 대소문자
+#### 아스키코드
 
 - String.fromCharCode(n)
+- String.charCodeAt(idx)
 - 대문자 A-Z : 65 - 90
 - 소문자 a-z : 97 - 112
 
@@ -732,7 +734,7 @@
 
 #### 변경
 
-- fill(value, startIdx, endIdx)
+- fill(val, startIdx, endIdx)
 - flat(num)
   - 다중 배열을 num횟수만큼 펼쳐서 하위 배열 반환
 - flatMap(callback)
@@ -756,7 +758,7 @@
 
 - includes(val, idx)
 - every(callback)
-- som(callback)
+- some(callback)
 
 #### 필터링
 
