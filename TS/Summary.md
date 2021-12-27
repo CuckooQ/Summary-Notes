@@ -230,7 +230,7 @@
 #### Indexable Iterface
 
 - Index Signature를 이용해서 구현하는 인터페이스
-  - [key: type1, ...]: type2
+  - \[key: type1, ...]: type2
 - interface IndexableObj {  
   &nbsp; &nbsp;\[key: type1, ...\]: type2;  
   }
@@ -364,7 +364,7 @@
 
 - 유니온 타입1과 유니온 타입2의 교집합인 새로운 유니온 타입 반환
 
-### NoNullable\<Type\>
+### NonNullable\<Type\>
 
 - 타입에서 null과 undefined를 제외한 새로운 타입 반환
 
