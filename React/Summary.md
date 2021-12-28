@@ -250,7 +250,7 @@
 ### 상태 결정 기준
 
 - DRY (Don't Repeat Yourself)
-- Minimum
+- Minimum Unit
 - Changeable
 
 ### 상태 정의 위치 결정 과정
@@ -376,9 +376,9 @@
 
 ### 조건 렌더링
 
+- ? 연산자 사용 (Best)
 - if else 사용
 - && 연산자 사용
-- ? 연산자 사용
 
 ### 렌더링 방지 방법
 
@@ -494,7 +494,7 @@
 - componentDidCatch(error, info)
   - 에러 정보를 서버로 전송하는 목적
   - 하위 컴포넌트의 에러가 발생하는 경우 호출
-- getDerivedStateFromError(error
+- getDerivedStateFromError(error)
   - 에러로 state를 갱신해서 화면에 표시하는 목적
   - 하위 컴포넌트의 에러가 발생하는 경우 호출
   - 새로운 state 반환
@@ -659,8 +659,12 @@
 - 속성
   - path
   - component
+    - 페이지 이동의 경우 다시 마운팅
+    - component={Component}
   - exact
   - render
+    - 페이지 이동의 경우 다시 마운팅 없이 렌더링
+    - render((props)=> <Component {...props}>);
 
 #### Redirect
 
@@ -677,7 +681,7 @@
 #### withRouter
 
 - 상위 컴포넌트의 props.location, history, match를 전달하는 리액트 라우터의 HOC
-- withRouter(class component {...});
+- withRouter(Component);
 
 ### 형태
 
