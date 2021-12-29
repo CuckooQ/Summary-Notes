@@ -716,7 +716,7 @@
 - const Context = React.createContext({  
    &nbsp; &nbsp;state: value,  
    &nbsp; &nbsp;...  
-  });
+  });  
   export default Context;
 
 ### 가져오기 방법
@@ -747,7 +747,7 @@
   ...  
   const {...} = this.context;
 
-#### Function Component
+#### Functional Component
 
 - 함수 컴포넌트에서는 useContext훅을 사용하는 방법
 
@@ -1192,7 +1192,7 @@
 - redux 폴더에 history.js 작성
 - history.js에 createBrowserHistory함수로 history 정의
 - reducer의 combineReducers({router: connectRouter(history)}) 설정
-- store의 creatStore의 applyMiddleware함수의 매개변수로 routerMiddleware(histroy) 설정
+- store의 creatStore의 applyMiddleware함수의 매개변수로 routerMiddleware(history) 설정
 
 ### Ducks Pattern
 
