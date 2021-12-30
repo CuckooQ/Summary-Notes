@@ -669,14 +669,14 @@
 - padEnd(num, num or str)
   - num-1개수의 num이나 str을 끝에 붙이기
 
+#### 문자 반환
+
+- charAt(idx)
+
 #### 배열 반환
 
 - split(str)
 - match(regex)
-
-#### 문자 반환
-
-- charAt(idx)
 
 #### 이터레이터 반환
 
