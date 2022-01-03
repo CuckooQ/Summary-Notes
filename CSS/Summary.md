@@ -69,6 +69,8 @@
 
 #### [24. SCSS](#SCSS)
 
+#### [25. Styled Components](#Styled-Components)
+
 <br>
 
 ## Rule Set
@@ -729,5 +731,128 @@
 - 믹스인 @mixin @include
 - 조건문 @if @else
 - 반복문 @for @each @while
+
+<br>
+
+## Styled Components
+
+### 정의
+
+- 리액트 컴포넌트 스타일링 라이브러리
+
+### 특징
+
+#### Automatic Critical CSS
+
+- 화면에 렌더링되는 컴포넌트를 추적해서 스타일을 자동으로 삽입하는 특징
+
+#### No Class Name Bugs
+
+- 유니크한 클래스 네임을 생성하는 특징
+
+#### Easier Deletion of CSS
+
+- 모든 속성이 특정 컴포넌트와 연결되어 있기 때문에 필요없는 컴포넌트를 삭제할 경우 스타일도 쉽게 삭제되는 특징
+
+#### Simple Dynamic Styling
+
+- Props나 전역 속성을 기반으로 컴포넌트에 스타일 속성 부여가 가능한 특징
+
+#### Painless Maintenance
+
+- 모든 속성이 특정 컴포넌트와 연결되어 있기 때문에 코드의 크기가 커지더라도 유지보수가 쉬운 특징
+
+#### Automatic Vendor Prefixing
+
+- Auto Prefix을 자동으로 추가해주는 특징
+
+### 형태
+
+```
+const StyledComponent = styled.tagName`
+  property: value;
+`
+```
+
+### 상속
+
+```
+const Component = styled(ParentStyledComponent)`
+...
+`
+const Component = props => <ParentStyledComponent {...props} children={props...} />
+```
+
+### Props 전달
+
+```
+const StyledComponent = styled.tagName.attrs(props => ({
+  attribute: props.attribute || defaultValue,
+  ...
+}))`
+  property: ${props => props.attribute ? value1 : value2 }
+`
+```
+
+### ClassName 설정
+
+```
+const StyledComponent = styled.tagName`
+  property: value;
+`
+...
+<StyledComponent className="..." />
+```
+
+### Nesting
+
+```
+const StyledComponent = styled.tagName`
+  property: value;
+
+  &:pseudoClassSelector {
+    ...
+  }
+  &::pseudoElementSelector {
+    ...
+  }
+
+  .class {
+    ...
+  }
+`
+```
+
+### Animation
+
+```
+const animation = keyframes`
+  from {
+    ...
+  }
+  to {
+    ...
+  }
+`
+const Component = styled.tagName`
+  animation: ${animation} ...
+`
+```
+
+### NextJS 설정
+
+#### babel설정
+
+```
+{
+  "presets": ["next/babel"],
+  "plugins": [["styled-components, {"ssr": true}]]
+}
+```
+
+#### \_document.js 설정
+
+- pages폴더에 \_document.js 설정
+- [\_document.js](https://github.com/vercel/next.js/blob/master/examples/with-styled-components/pages/_document.js)
 
 <br>
