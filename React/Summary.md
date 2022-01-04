@@ -649,22 +649,35 @@
 
 - 라우터 최상위 컴포넌트
 
-#### Switch
+### ~~Switch~~
 
 - Route 컴포넌트들을 감싸는 컴포넌트
+- 순서 기준으로 라우트 선택
+
+#### Routes
+
+- Route 컴포넌트들을 감싸는 컴포넌트
+- 가장 일치하는 라우트 선택
+- 중첩 라우팅 가능
 
 #### Route
 
 - 해당 링크와 컴포넌트를 연결시켜주는 라우터 컴포넌트
+- 반드시 상위 컴포넌트로 Routes 설정 필수
 - 속성
   - path
-  - component
+    - 서브 경로 설정의 경우 .../\* 사용
+    - ~~optional~~
+  - ~~component~~
     - 페이지 이동의 경우 다시 마운팅
     - component={Component}
-  - exact
-  - render
+  - ~~render~~
     - 페이지 이동의 경우 다시 마운팅 없이 렌더링
     - render((props)=> <Component {...props}>);
+  - ~~exact~~
+    - \>=v6 기본 설정으로 변경
+  - element
+    - component와 render, children 대체 속성
 
 #### Redirect
 
@@ -683,15 +696,51 @@
 - 상위 컴포넌트의 props.location, history, match를 전달하는 리액트 라우터의 HOC
 - withRouter(Component);
 
+#### ~~useHistory~~
+
+- history 객체 반환 훅
+
+#### useNavigate
+
+- navigate 함수 반환 훅
+- useHistory 대체 훅
+- ```
+  const navigate = useNavigate();
+  navigate("/);
+  navigate(-1);
+  navigate(-2);
+  navigate(`/abcd/${id}`)
+  ```
+
+#### ~~useRouteMatch~~
+
+- match 객체 반환 훅
+
+#### 상대 경로 이동
+
+- useRouteMatch 대체 기능
+- ```
+  <Link to="" />
+  <Link to="abcd" />
+
+  <Route path="" />
+  <Route path="abcd" />
+  ```
+
 ### 형태
 
-- \<BrowserRouter\>  
-  &nbsp; &nbsp;\<switch\>  
-  &nbsp; &nbsp; &nbsp; &nbsp; \<Route path="..." component={...}\>  
-  &nbsp; &nbsp; &nbsp; &nbsp; \<Route path="..." component={...}\>  
-  &nbsp; &nbsp; &nbsp; &nbsp; ...  
-  &nbsp; &nbsp;\</switch\>  
-  \</BrowserRouter\>
+- ```
+  <BrowserRouter>
+    <Routes\>
+      <Route path="/" element={<Component1 />} />
+      <Routes path="abcd/*" element={<Component2 />} >
+        <Routes path=":id" element={<Component3 />}>
+        <Routes path="efgh" element={<Component4 />}>
+      </Routes>
+      ...
+    </Routes>
+  </BrowserRouter>
+  ```
 
 ### URL ID 가져오기 방법
 
@@ -713,10 +762,10 @@
 ### 생성 방법
 
 - React.createContext함수 사용
-- const Context = React.createContext({  
-   &nbsp; &nbsp;state: value,  
-   &nbsp; &nbsp;...  
-  });  
+- const Context = React.createContext({
+  &nbsp; &nbsp;state: value,
+  &nbsp; &nbsp;...
+  });
   export default Context;
 
 ### 가져오기 방법
@@ -724,27 +773,27 @@
 #### Consumer
 
 - Context.Provider컴포넌트로 사용할 컴포넌트를 감싸고, 사용할 컴포넌트 안에서 Context.Consumer 컴포넌트로 감싸서 해당 Context의 상태들을 공유하는 방법
-- \<Context.Provider value={{...states}}\>  
-  &nbsp; &nbsp;\<Component\>  
-  \</Context.Provider\>  
-  ...  
-  export default function Component() {  
-   &nbsp; &nbsp;return (  
-   &nbsp; &nbsp; &nbsp; &nbsp;\<Context.Consumer\>  
-   &nbsp; &nbsp; &nbsp; &nbsp;{(Context) => (  
-   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;...{Context...}  
-   &nbsp; &nbsp; &nbsp; &nbsp;)}  
-  &nbsp; &nbsp; &nbsp; &nbsp;\</Context.Consumer\>  
-  &nbsp; &nbsp;)  
+- \<Context.Provider value={{...states}}\>
+  &nbsp; &nbsp;\<Component\>
+  \</Context.Provider\>
+  ...
+  export default function Component() {
+  &nbsp; &nbsp;return (
+  &nbsp; &nbsp; &nbsp; &nbsp;\<Context.Consumer\>
+  &nbsp; &nbsp; &nbsp; &nbsp;{(Context) => (
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;...{Context...}
+  &nbsp; &nbsp; &nbsp; &nbsp;)}
+  &nbsp; &nbsp; &nbsp; &nbsp;\</Context.Consumer\>
+  &nbsp; &nbsp;)
   }
 
 #### Class Component
 
 - 클래스 컴포넌트에서는 static contextType에 해당 Context를 지정하고 this.context에서 필요한 상태들을 가져와서 사용하는 방법
-- import Context from "../contexts/Context";  
-  ...  
-  static contextType = Context;  
-  ...  
+- import Context from "../contexts/Context";
+  ...
+  static contextType = Context;
+  ...
   const {...} = this.context;
 
 #### Functional Component
@@ -790,6 +839,12 @@
     }
   }
   ```
+
+````
+
+```
+
+```
 
 ### 포착 불가 에러
 
@@ -867,8 +922,8 @@
 
 #### 예시
 
-- import styles from "./..module.css;  
-  \<component className={styles["className"]} />  
+- import styles from "./..module.css;
+  \<component className={styles["className"]} />
   \<component className={styles.className} />
 
 ### Classnames
@@ -879,7 +934,7 @@
 
 #### 예시
 
-- import classNames from "classnames";  
+- import classNames from "classnames";
   <component className={classNames("className1", {className2: state})}>
 
 ### Styled Components
@@ -890,14 +945,14 @@
 
 #### 예시
 
-- import styled from "styled-components";  
-  const StyledComponent = styled.component\`  
-   &nbsp; &nbsp;...  
-  \`;  
-  function Component() {  
-   &nbsp; &nbsp;return \<StyledComponent>  
-  &nbsp; &nbsp;...  
-   &nbsp; &nbsp;\</StyledComponent>  
+- import styled from "styled-components";
+  const StyledComponent = styled.component\`
+  &nbsp; &nbsp;...
+  \`;
+  function Component() {
+  &nbsp; &nbsp;return \<StyledComponent>
+  &nbsp; &nbsp;...
+  &nbsp; &nbsp;\</StyledComponent>
   }
 
 ### React Shadow
@@ -1002,8 +1057,8 @@
 
 - 컴포넌트가 렌더링될 때마다 특정 작업 실행 목적의 훅
 - componentDidMount, componentDidUpdate, componentWillUnmount 생명주기 구현 가능
-- useEffect(() =>  
-   &nbsp; &nbsp;componentDidMount | componentWillUpdate Action  
+- useEffect(() =>
+  &nbsp; &nbsp;componentDidMount | componentWillUpdate Action
   &nbsp; &nbsp;return () => {componentWillUnmount Action}, [states])
 
 #### useReducer
@@ -1247,3 +1302,4 @@
 - 로그인 화면 이동
 
 <br>
+````
