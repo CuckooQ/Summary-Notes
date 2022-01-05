@@ -33,52 +33,55 @@
 
 #### [13. Stack Level](#Stack-Level)
 
-#### [14. Background](#Background)
+#### [14. Creating New Stacking Context](#Creating-New Stacking-Context)
 
-#### [15. Transition](#Transition)
+#### [15. Background](#Background)
 
-#### [16. Transform](#Transform)
+#### [16. Transition](#Transition)
 
-#### [17. Perspective](#Perspective)
+#### [17. Transform](#Transform)
 
-#### [18. Outline](#Outline)
+#### [18. Perspective](#Perspective)
 
-#### [19. Text Style](#Text-Style)
+#### [19. Outline](#Outline)
+
+#### [20. Text Style](#Text-Style)
 
 - [폰트](#폰트)
 - [텍스트 레이아웃](#텍스트-레이아웃)
 
-#### [20. Box Model](#Box-Model)
+#### [21. Box Model](#Box-Model)
 
 - 구성
 - 기타 프로퍼티
 - 특징
 
-#### [21. Placement](#Placement)
+#### [22. Placement](#Placement)
 
 - [Float](#Float)
 - [Position](#Position)
 - [Centering](#Centering)
 
-#### [22. Display](#Display)
+#### [23. Display](#Display)
 
-#### [23. Layout](#Layout)
+#### [24. Layout](#Layout)
 
 - [Grid](#Grid)
 - [Flex Box](#Flex-Box)
 
-#### [24. SCSS](#SCSS)
+#### [25. SCSS](#SCSS)
 
-#### [25. Styled Components](#Styled-Components)
+#### [26. Styled Components](#Styled-Components)
 
 - 정의
 - 특징
 - 형태
 - 상속
 - Props 전달
-- ClassName 설정
+- ClassName
 - Nesting
 - Animation
+- Global Style
 - NextJS 설정
 
 <br>
@@ -324,6 +327,19 @@
 
 <br>
 
+## Creating New Stacking Context
+
+### Property
+
+- isolation
+
+### value
+
+- auto
+- isolate
+
+<br>
+
 ## Background
 
 - background-attachment
@@ -479,6 +495,9 @@
 - Margin Collapsing
 
   - 수직 인접한 두 요소가 존재할 경우에 작은 마진이 더 큰 마진으로 병합되어서 작은 마진이 적용이 안 된 것처럼 보이는 현상
+  - 해결 방법
+    - Grid 레이아웃을 사용하는 경우 grid-gap 프로퍼티 사용
+    - Flex Box 레이아웃을 사용하는 겨우 gap 프로퍼티 사용
 
 <br>
 
@@ -804,7 +823,7 @@ const StyledComponent = styled.tagName.attrs(props => ({
 `
 ```
 
-### ClassName 설정
+### ClassName
 
 ```
 const StyledComponent = styled.tagName`
@@ -835,29 +854,58 @@ const StyledComponent = styled.tagName`
 
 ### Animation
 
-```
-const animation = keyframes`
-  from {
+- keyframes 사용
+  ```
+  const animation = keyframes`
+    from {
+      ...
+    }
+    to {
+      ...
+    }
+  `
+  const Component = styled.tagName`
+    animation: ${animation} ...
+  `
+  ```
+
+### Global Style
+
+- createGlobalStyle 사용
+
+  ```
+  // GlobalStyle.jsx
+  import { createGlobalStyle } from "styled-components";
+  const GlobalStyle = createGlobalStyle`
+    * {
+      ...
+    }
+    body {
+      ...
+    }
+  `
+  export default GlobalStyle;
+
+  // App.jsx
+  import GlobalStyle from "./GlobalStyle";
+  ...
+  <>
+    <GlobalStyle />
     ...
-  }
-  to {
-    ...
-  }
-`
-const Component = styled.tagName`
-  animation: ${animation} ...
-`
-```
+  </>
+  ```
 
 ### NextJS 설정
 
 #### babel설정
 
 ```
+
 {
-  "presets": ["next/babel"],
-  "plugins": [["styled-components, {"ssr": true}]]
+"presets": ["next/babel"],
+"plugins": [["styled-components, {"ssr": true}]]
 }
+
 ```
 
 #### \_document.js 설정
