@@ -18,8 +18,9 @@
 
 #### [7. Image](#Image)
 
-- [비트맵](#비트맵)
-- [벡터](#벡터)
+- 비트맵
+- 벡터
+- SVG
 
 #### [8. Color Unit](#Color-Unit)
 
@@ -33,7 +34,7 @@
 
 #### [13. Stack Level](#Stack-Level)
 
-#### [14. Creating New Stacking Context](#Creating-New Stacking-Context)
+#### [14. Creating New Stacking Context](#Creating-New-Stacking-Context)
 
 #### [15. Background](#Background)
 
@@ -47,8 +48,8 @@
 
 #### [20. Text Style](#Text-Style)
 
-- [폰트](#폰트)
-- [텍스트 레이아웃](#텍스트-레이아웃)
+- 폰트
+- 텍스트 레이아웃
 
 #### [21. Box Model](#Box-Model)
 
@@ -58,16 +59,16 @@
 
 #### [22. Placement](#Placement)
 
-- [Float](#Float)
-- [Position](#Position)
-- [Centering](#Centering)
+- Float
+- Position
+- Centering
 
 #### [23. Display](#Display)
 
 #### [24. Layout](#Layout)
 
-- [Grid](#Grid)
-- [Flex Box](#Flex-Box)
+- Grid
+- Flex Box
 
 #### [25. SCSS](#SCSS)
 
@@ -246,6 +247,25 @@
 
 - svg
 
+### SVG
+
+#### stroke
+
+- stroke
+  - 선 색상
+- stroke-dasharray
+  - 점선 간격
+- stroke-dashoffset
+  - 점선의 시작점
+- stroke-linecap
+  - 선의 양 끝 모양
+- stroke-linejoin
+  - 선의 코너 모양
+- stroke-opacity
+  - 선 투명도
+- stroke-width
+  - 선 굵기
+
 <br>
 
 ## Color Unit
@@ -360,6 +380,12 @@
   - auto
   - cover
   - contain
+- gradient
+  - linear-gradient(befColor, aftColor)
+  - radial-gradient(befColor, aftColor)
+  - repeating-linear-gradient(befColor, aftColor)
+  - repeating-radial-gradient(befColor, aftColor)
+  - conit-gradient(befColor, aftColor)
 
 <br>
 
