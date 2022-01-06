@@ -44,35 +44,37 @@
 
 #### [18. Perspective](#Perspective)
 
-#### [19. Outline](#Outline)
+#### [19. Animation](#Animation)
 
-#### [20. Text Style](#Text-Style)
+#### [20. Outline](#Outline)
+
+#### [21. Text Style](#Text-Style)
 
 - 폰트
 - 텍스트 레이아웃
 
-#### [21. Box Model](#Box-Model)
+#### [22. Box Model](#Box-Model)
 
 - 구성
 - 기타 프로퍼티
 - 특징
 
-#### [22. Placement](#Placement)
+#### [23. Placement](#Placement)
 
 - Float
 - Position
 - Centering
 
-#### [23. Display](#Display)
+#### [24. Display](#Display)
 
-#### [24. Layout](#Layout)
+#### [25. Layout](#Layout)
 
 - Grid
 - Flex Box
 
-#### [25. SCSS](#SCSS)
+#### [26. SCSS](#SCSS)
 
-#### [26. Styled Components](#Styled-Components)
+#### [27. Styled Components](#Styled-Components)
 
 - 정의
 - 특징
@@ -81,7 +83,7 @@
 - Props 전달
 - ClassName
 - Nesting
-- Animation
+- 애니메이션
 - Global Style
 - NextJS 설정
 
@@ -440,6 +442,53 @@
 - 관찰 대상의 부모에 원근거리 추가
 
 <br>
+
+## Animation
+
+### 정의
+
+- @keyframes 사용
+- ```
+  @keyframes animation-name {
+    from {
+      ...
+    }
+    to {
+      ...
+    }
+    n% {
+      ...
+    }
+  }
+  ```
+
+### property
+
+- animation-name
+- animation-duration
+- animation-timing-function
+- animation-delay
+- animation-iteration-count
+  - 애니메이션 반복 횟수
+  - number
+  - infinite
+- animation-direction
+  - 애니메이션 종류 이후 다시 반복되는 경우의 시작 방향
+  - normal
+  - reverse
+  - alternate
+- animation-fill-mode
+  - 애니메이션이 시작되기 전이나 끝난 후에 요소에 적용되는 값 설정
+  - none
+  - forwards
+    - 마지막 값 유지
+  - backwards
+    - 시작 값 유지
+  - both
+- animation-play-state
+  - 애니메이션 실행과 멈춤 설정
+  - running
+  - paused
 
 ## Outline
 
@@ -878,7 +927,7 @@ const StyledComponent = styled.tagName`
 `
 ```
 
-### Animation
+### 애니메이션
 
 - keyframes 사용
   ```
