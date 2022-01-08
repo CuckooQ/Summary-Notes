@@ -406,12 +406,6 @@
   - auto
   - cover
   - contain
-- gradient
-  - linear-gradient(befColor, aftColor)
-  - radial-gradient(befColor, aftColor)
-  - repeating-linear-gradient(befColor, aftColor)
-  - repeating-radial-gradient(befColor, aftColor)
-  - conit-gradient(befColor, aftColor)
 
 <br>
 
