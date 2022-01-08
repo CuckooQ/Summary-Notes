@@ -22,59 +22,63 @@
 - 벡터
 - SVG
 
-#### [8. Color Unit](#Color-Unit)
+#### [8. Color](#Color)
 
-#### [9. Size](#Size)
+- Gradient
 
-#### [10. Size Unit](#Size-Unit)
+#### [9. Color Unit](#Color-Unit)
 
-#### [11. Overflow](#Overflow)
+#### [10. Size](#Size)
 
-#### [12. Opacity](#Opacity)
+#### [11. Size Unit](#Size-Unit)
 
-#### [13. Stack Level](#Stack-Level)
+#### [12. Overflow](#Overflow)
 
-#### [14. Creating New Stacking Context](#Creating-New-Stacking-Context)
+#### [13. Opacity](#Opacity)
 
-#### [15. Background](#Background)
+#### [14. Stack Level](#Stack-Level)
 
-#### [16. Transition](#Transition)
+#### [15. Creating New Stacking Context](#Creating-New-Stacking-Context)
 
-#### [17. Transform](#Transform)
+#### [16. Background](#Background)
 
-#### [18. Perspective](#Perspective)
+#### [17. Transition](#Transition)
 
-#### [19. Animation](#Animation)
+#### [18. Transform](#Transform)
 
-#### [20. Outline](#Outline)
+#### [19. Perspective](#Perspective)
 
-#### [21. Text Style](#Text-Style)
+#### [20. Animation](#Animation)
+
+#### [21. Outline](#Outline)
+
+#### [22. Text Style](#Text-Style)
 
 - 폰트
 - 텍스트 레이아웃
 
-#### [22. Box Model](#Box-Model)
+#### [23. Box Model](#Box-Model)
 
 - 구성
 - 기타 프로퍼티
 - 특징
 
-#### [23. Placement](#Placement)
+#### [24. Placement](#Placement)
 
 - Float
 - Position
 - Centering
 
-#### [24. Display](#Display)
+#### [25. Display](#Display)
 
-#### [25. Layout](#Layout)
+#### [26. Layout](#Layout)
 
 - Grid
 - Flex Box
 
-#### [26. SCSS](#SCSS)
+#### [27. SCSS](#SCSS)
 
-#### [27. Styled Components](#Styled-Components)
+#### [28. Styled Components](#Styled-Components)
 
 - 정의
 - 특징
@@ -267,6 +271,26 @@
   - 선 투명도
 - stroke-width
   - 선 굵기
+
+<br>
+
+## Color
+
+### Gradient
+
+#### Linear Gradient
+
+- linear-gradient(direction, color, ...)
+- repeating-linear-gradient(direction, color, ...)
+
+#### Radial Gradient
+
+- radial-gradient(startPosition, color, ...)
+- repeating-radial-gradient(startPosition, color, ...)
+
+#### Conic Gradient
+
+- conic-gradient(startPosition, color, ...)
 
 <br>
 
