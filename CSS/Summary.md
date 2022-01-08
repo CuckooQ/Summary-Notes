@@ -18,60 +18,67 @@
 
 #### [7. Image](#Image)
 
-- [비트맵](#비트맵)
-- [벡터](#벡터)
+- 비트맵
+- 벡터
+- SVG
 
-#### [8. Color Unit](#Color-Unit)
+#### [8. Color](#Color)
 
-#### [9. Size](#Size)
+- Gradient
 
-#### [10. Size Unit](#Size-Unit)
+#### [9. Color Unit](#Color-Unit)
 
-#### [11. Overflow](#Overflow)
+#### [10. Size](#Size)
 
-#### [12. Opacity](#Opacity)
+#### [11. Size Unit](#Size-Unit)
 
-#### [13. Stack Level](#Stack-Level)
+#### [12. Overflow](#Overflow)
 
-#### [14. Creating New Stacking Context](#Creating-New Stacking-Context)
+#### [13. Opacity](#Opacity)
 
-#### [15. Background](#Background)
+#### [14. Stack Level](#Stack-Level)
 
-#### [16. Transition](#Transition)
+#### [15. Creating New Stacking Context](#Creating-New-Stacking-Context)
 
-#### [17. Transform](#Transform)
+#### [16. Background](#Background)
 
-#### [18. Perspective](#Perspective)
+#### [17. Transition](#Transition)
 
-#### [19. Outline](#Outline)
+#### [18. Transform](#Transform)
 
-#### [20. Text Style](#Text-Style)
+#### [19. Perspective](#Perspective)
 
-- [폰트](#폰트)
-- [텍스트 레이아웃](#텍스트-레이아웃)
+#### [20. Animation](#Animation)
 
-#### [21. Box Model](#Box-Model)
+#### [21. Outline](#Outline)
+
+#### [22. Text Style](#Text-Style)
+
+- 폰트
+- 텍스트 레이아웃
+
+#### [23. Box Model](#Box-Model)
 
 - 구성
 - 기타 프로퍼티
 - 특징
 
-#### [22. Placement](#Placement)
+#### [24. Placement](#Placement)
 
-- [Float](#Float)
-- [Position](#Position)
-- [Centering](#Centering)
+- Float
+- Position
+- Centering
 
-#### [23. Display](#Display)
+#### [25. Display](#Display)
 
-#### [24. Layout](#Layout)
+#### [26. Layout](#Layout)
 
-- [Grid](#Grid)
-- [Flex Box](#Flex-Box)
+- Grid
+- Flex Box
 
-#### [25. SCSS](#SCSS)
+#### [27. SCSS](#SCSS)
 
-#### [26. Styled Components](#Styled-Components)
+#### [28. Styled Components](#Styled-Components)
 
 - 정의
 - 특징
@@ -80,7 +87,7 @@
 - Props 전달
 - ClassName
 - Nesting
-- Animation
+- 애니메이션
 - Global Style
 - NextJS 설정
 
@@ -245,6 +252,45 @@
 #### 확장자
 
 - svg
+
+### SVG
+
+#### stroke
+
+- stroke
+  - 선 색상
+- stroke-dasharray
+  - 점선 간격
+- stroke-dashoffset
+  - 점선의 시작점
+- stroke-linecap
+  - 선의 양 끝 모양
+- stroke-linejoin
+  - 선의 코너 모양
+- stroke-opacity
+  - 선 투명도
+- stroke-width
+  - 선 굵기
+
+<br>
+
+## Color
+
+### Gradient
+
+#### Linear Gradient
+
+- linear-gradient(direction, color, ...)
+- repeating-linear-gradient(direction, color, ...)
+
+#### Radial Gradient
+
+- radial-gradient(startPosition, color, ...)
+- repeating-radial-gradient(startPosition, color, ...)
+
+#### Conic Gradient
+
+- conic-gradient(startPosition, color, ...)
 
 <br>
 
@@ -414,6 +460,53 @@
 - 관찰 대상의 부모에 원근거리 추가
 
 <br>
+
+## Animation
+
+### 정의
+
+- @keyframes 사용
+- ```
+  @keyframes animation-name {
+    from {
+      ...
+    }
+    to {
+      ...
+    }
+    n% {
+      ...
+    }
+  }
+  ```
+
+### property
+
+- animation-name
+- animation-duration
+- animation-timing-function
+- animation-delay
+- animation-iteration-count
+  - 애니메이션 반복 횟수
+  - number
+  - infinite
+- animation-direction
+  - 애니메이션 종류 이후 다시 반복되는 경우의 시작 방향
+  - normal
+  - reverse
+  - alternate
+- animation-fill-mode
+  - 애니메이션이 시작되기 전이나 끝난 후에 요소에 적용되는 값 설정
+  - none
+  - forwards
+    - 마지막 값 유지
+  - backwards
+    - 시작 값 유지
+  - both
+- animation-play-state
+  - 애니메이션 실행과 멈춤 설정
+  - running
+  - paused
 
 ## Outline
 
@@ -852,7 +945,7 @@ const StyledComponent = styled.tagName`
 `
 ```
 
-### Animation
+### 애니메이션
 
 - keyframes 사용
   ```
