@@ -57,6 +57,9 @@
 - document.getElementByTagName(tagName)
 - document.createElement(tagName, options)
 - document.createDocumentFragment()
+- document.documentElement
+  - 문서의 루트 엘리먼트
+  - 읽기 전용
 
 ### Element
 
@@ -71,6 +74,8 @@
   - add(className)
   - remove(className)
   - contains(className)
+- element.scrollHeight - element.clientHeight
+  - 요소에서 스크롤할 수 있는 최대 높이
 
 ### Window
 
