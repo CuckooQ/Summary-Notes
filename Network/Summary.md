@@ -128,7 +128,7 @@
 - Transport Layer
 - Network Layer
 - Data Link Layer
-- Phisical Layer
+- Physical Layer
 
 ### TCP/IP 4계층
 
