@@ -17,6 +17,7 @@
 - Response Header
 - X Header
 - Authorization Token
+- HTTP Cache
 - Library
 
 <br>
@@ -258,6 +259,24 @@
 - Digest
 - HOBA
 - Mutual
+
+### HTTP Cache
+
+#### Cache Control + Expire
+
+- max-age동안 브라우저가 캐시 데이터를 사용하도록 하는 방법
+- 지양되는 방법
+- Cache-Control: public, max-age=...
+
+#### Last Modified
+
+- API 내용이 변경된 마지막 시간인 last-modified을 응답으로 포함해서, 브라우저에서 동일한 API 요청에서 마지막 변경 시간을 비교해서 캐싱 데이터를 사용하는 여부를 결정하는 방법
+- DB 모든 데이터가 마지막 변경 시간을 가지는 경우 사용 용이
+
+#### Etag
+
+- API 내용이 변경된 사실을 알려주는 해시 값인 etag를 응답으로 포함해서, 브라우저에서 동일한 API 요청에서 마지막 변경된 사실을 비교해서 캐싱 데이터를 사용하는 여부를 결정하는 방법
+- 가장 지향되는 방법
 
 ### Library
 
