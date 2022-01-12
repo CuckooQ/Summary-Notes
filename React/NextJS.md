@@ -12,27 +12,65 @@
 
 #### [4. Pre-rendering](#Pre-rendering)
 
+- 정의
+- 장점
+- Hydration
+- 종류
+- Static Generation
+- Server Side Rendering
+
 #### [5. Layouting](#Layouting)
+
+- 정의
+- 형태
 
 #### [6. 이미지](#이미지)
 
+- 특징
+- 사용 방법
+- 리모트 이미지 사용 시 필수 설정
+
 #### [7. 폰트](#폰트)
+
+- 특징
+- 설정 방법
 
 #### [8. 스크립트](#스크립트)
 
+- 사용 방법
+- Script 속성
+
 #### [9. 정적 파일](#정적-파일)
+
+- 설정방법
+- 사용 방법
 
 #### [10. 환경 변수](#환경-변수)
 
+- 설정 방법
+- 형태
+
 #### [11. 라우팅](#라우팅)
+
+- 컨셉
+- 설정 방법
 
 #### [12. API 라우팅](#API-라우팅)
 
-#### [13. 프로덕션 모드](#프로덕션-모드)
+- 설정 방법
+- 형태
+- 미들웨어 설정
+- Req
+- Res
 
-#### [14. 인증](#인증)
+#### [13. 테스트](#테스트)
 
-#### [15. 테스트](#테스트)
+- Cypress
+- Jest
+
+#### [14. 배포 단계 확인](#배포-단계-확인)
+
+#### [15. Vercel](#Vercel)
 
 <br>
 
@@ -382,11 +420,11 @@ export default function Component() {
 
 ## 정적 파일
 
-### 설정
+### 설정 방법
 
 - public 루트에 저장
 
-### 사용
+### 사용 방법
 
 - "/..."
 
@@ -423,7 +461,7 @@ process.env.NEXT_PUBLIC_VARIABLES_D
 
 ## 라우팅
 
-### 컨셉트
+### 컨셉
 
 - 페이지 파일 기반 라우팅
 
@@ -586,20 +624,44 @@ export default handler;
 
 <br>
 
-## 프로덕션 모드
-
-- TODO
-
-<br>
-
-## 인증
-
-- TODO
-
-<br>
-
 ## 테스트
 
-- TODO
+### Cypress
+
+#### 빠른 시작
+
+- npx create-next-app --example with-cypress with-cypress-app
+
+#### 사전 준비
+
+- 프로덕션 모드에서의 서버 실행
+  - npm run build
+  - npm run start
+
+### Jest
+
+#### 빠른 시작
+
+- npx create-next-app --example with-jest with-jest-app
+
+<br>
+
+## 배포 단계 확인
+
+- 캐싱 사용하기
+- 데이터베이스와 백엔드의 동일 지역 배포 확인
+- JS 파일 최소화하기
+- 로깅 확인
+- 오류 처리 설정 확인
+- 404 & 500 에러 페이지 제공하기
+- 성능 측정 지원 확인
+- Lighthouse를 이용해서 성능, 모범사례, 접근성, SEO 확인하기
+- 지원 브라우저 및 기능 확인
+
+<br>
+
+## Vercel
+
+- NextJS 개발사의 클라우드 플랫폼
 
 <br>
