@@ -1038,7 +1038,26 @@
 
 ### 코딩룰
 
+#### 명명법
+
 - use Prefix
+
+#### 기존 값을 이용한 변경 방법
+
+```
+const [value, setValue] = useState(0);
+
+// WRONG
+function update() {
+  setValue(value + 1);
+}
+
+// RIGHT
+function update() {
+  setValue((prevValue) => prevValue + 1);
+}
+
+```
 
 ### 종류
 
