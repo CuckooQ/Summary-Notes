@@ -317,12 +317,12 @@
 
 ### 정의 방법
 
-- Function Expression
+- Function Declaration
   - function foo(){}
+- Function Expression
+  - const foo = function(){}
 - IIFE (Immediately Invoked Function Expression)
   - (function(){}());
-- Function Declaration
-  - const foo = function(){}
 
 ### 특징
 
