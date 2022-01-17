@@ -1300,6 +1300,95 @@ function update() {
 - redux-devtools
   - 리덕스 상태와 액션의 흐름을 개발자 모드에서 확인할 수 있는 플러그인
 
+### Redux ToolKit
+
+#### 약어
+
+- RTK
+
+#### 정의
+
+- Redux의 복잡성을 낮추고 사용성을 높이는 목적의 도구 모음 라이브러리
+
+#### 설치 방법
+
+- npx create-react-app --template redux
+  npx create-react-app --template redux-typescript 사용
+- npm i @redux/toolkit 사용
+
+#### API
+
+- configureStore
+
+  - createStore 대체 함수
+  - 속성
+    - reducer
+    - middlewrare: []
+      - getDefaultMiddleware
+        - 기본 미들웨어 반환 함수
+        - redux-thunk 미들웨어 추가
+    - devTools: boolean
+      - 개별 설정을 안하는 경우 개발 환경에서 활성화
+    - preloadedState
+      - 초기 상태
+    - enhancers: []
+
+  ```
+  import {configureStore} from    "@redux/toolkit";
+  import rootReducer from "./   reducers";
+  const store = configure(   {reducer: rootReducer});
+  ```
+
+- createReducer
+
+  - 리듀서 생성 함수
+  - 내부에서 immer 라이브러리 사용
+  - 객체나 배열을 새로 복사 필요X
+  - Builder Callback 표기법으로 리듀서 내부의 액션별 처리 구현
+  - addCase(actionType, (state, action) => {...})
+    - 액션과 처리 함수
+  - addMatcher(matcher, (state, action) => {...})
+    - 매처와 처리 함수
+  - addDefaultCase((state, action) => {...})
+    - 액션과 매처와 일치하지 않는 경우의 기본 처리 함수
+
+  ```
+  const actionA = createAction("actoin_name");
+  const isMatching(action) {
+    return boolean;
+  }
+  const reducer = createReducer   (state = [], (builder) => {
+    builder
+     .addCase(actionA, (state,    action) => {
+      const {...} = action.   payload;
+      state.... = value;
+    })
+    .addCase(...)
+    .addMatcher(isMatching, (state, action) => {...})
+    .addDefaultCase((state, action) => {...})
+  });
+  ```
+
+- createAction
+
+  - 액션타입 정의와 액션 생성자 함수를 결합한 함수
+  - prepare함수로 액션의 payload에 사용자 정의 값 지정 가능
+
+  ```
+  const actionA = createAction("reducerName/actionType");
+  const actionB = createAction("reducerName/actionType", function prepare(param) {
+    return {
+      payload: {
+        attr1: value1,
+        attr2: value2,
+        ...
+      }
+    }
+  })
+  ```
+
+####
+
 ### 방법
 
 #### Redux Store 인증 토큰 다루는 방법
