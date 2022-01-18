@@ -174,13 +174,15 @@
 - husky
 - lint-staged
 
-#### [27. Hook](#Hook)
+#### [27. 유틸 라이브러리](유틸-라이브러리)
+
+#### [28. Hook](#Hook)
 
 - 정의
 - 코딩룰
 - 종류
 
-#### [28. Redux](#Redux)
+#### [29. Redux](#Redux)
 
 - 정의
 - Key Principle
@@ -1027,6 +1029,32 @@
 - Git Staged 상태 파일 대상의 명령어 실행 라이브러리
 - .lintstagedrc
   - lint-staged 설정 파일
+
+<br>
+
+## 유틸 라이브러리
+
+### Immer
+
+#### 정의
+
+- 불변성을 유지하면서 상태를 업데이트해주는 라이브러리
+
+#### 사용법
+
+```
+import produce from "immer";
+
+function reducer(state, action) {
+  switch(action.type) {
+    case "ACTION_NAME": {
+      return produce(state, draft => {
+        draft.stateName....;
+      })
+    }
+  }
+}
+```
 
 <br>
 
