@@ -1387,7 +1387,153 @@ function update() {
   })
   ```
 
-####
+- createSlice
+
+  - Ducks Pattern 지원 목적의 리듀서 생성 함수
+  - 모듈 이름, 액션, 초기 상태 지원
+
+  ```
+  const sliceName = createSlice({
+    name: "sliceName",
+    initialState: {
+      ...
+    },
+    reducers: {
+      actionName: (state, action) => {
+        ...
+      },
+      ...
+    },
+    extraReducers: (builder) => {
+      builder.
+        addCase(...),
+        addCase(...),
+        ...
+    }
+  });
+
+  const {actions, reducer} = sliceName;
+  export const { actionName } = actions;
+  export default reducer;
+  ```
+
+- createAsyncThunk
+
+  - 비동기 액션 생성 함수
+
+  ```
+  const actionName = createAsyncThunk(
+    "reducerName/actionName",
+    async (param, thunkAPI) => {
+      const response = await ...
+      return response.data;
+    }
+  )
+
+  const sliceName = userSlice({
+    name: "sliceName",
+    initialState: {...},
+    reducers: {...},
+    extraReducers: (builder) => {
+      builder.
+        addCase(actionName.pending, (state) => {...}),
+        addCase(actionName.fulfilled, (state, action) => {...}),
+        addCase(actionName.rejected, (state) => {...})
+        ...
+    }
+  });
+
+  // dispatch를 통해 액션 사용
+  dispatch(actionName(param));
+  ```
+
+- createSelector
+
+  - 최적화 + useSelector 대체 함수
+  - 메모이제이션
+
+  ```
+  export const selectorName = createSelector(
+    state => state.sliceName.stateName1,
+    state => state.sliceName.stateName2,
+    ...,
+    (stateName1, stateName2, ...) => {
+      ...
+    }
+  )
+
+  const stateName = useSelector(selectorName);
+  ```
+
+- createEntityAdapter
+
+  - 미리 빌드된 리듀서와 셀렉터 생성 함수
+  - CRUD 함수 지원
+    - addOne
+    - addMany
+    - setOne
+    - setMany
+    - setAll
+    - removeOne
+    - removeMany
+    - removeAll
+    - updateOne
+    - updateMany
+    - upsertOne
+    - upsertMany
+  - 초기 상태 지원
+    - getInitialState
+  - 셀렉터 함수 지원
+    - selectIds
+    - selectEntities
+    - selectAll
+    - selectTotal
+    - selectById
+
+  ```
+  const adapterName = createEntityAdapter({
+    ...
+  });
+  const sliceName = createSlice({
+    name: "sliceName",
+    initialState: adpaterName.getInitialState({
+      stateName: value,
+      ...
+    }),
+    reducers: {
+      actionsName: adapterName.addOne,
+      ...,
+
+    }
+  });
+  ...
+  const selectorName = adapterName.getSelectors((state) => state.reducerName);
+  const ids = selectorName.selectIds(store.getState());
+  const all = selectorName.selectAll(store.getState());
+  ...
+  ```
+
+#### Folder Structure
+
+```
+/src
+  index.tsx
+  /app
+    store.ts
+    rootReducer.ts
+    App.tsx
+  /common
+    hooks
+    generic Components
+    Utils
+    etc
+  /features
+    /feature1
+      feature1Slice.ts
+      feature1.tsx
+    /featureN
+    ...
+```
 
 ### 방법
 
