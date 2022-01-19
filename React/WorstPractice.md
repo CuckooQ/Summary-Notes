@@ -26,6 +26,8 @@
 
 #### [11. Avoiding React Dev Tools](#Avoiding-React-Dev-Tools)
 
+#### [12. Summary](#Summary)
+
 <br>
 
 ---
@@ -400,5 +402,20 @@ const Product = (props) => {
 <br>
 
 ## Avoiding React Dev Tools
+
+<br>
+
+## Summary
+
+- 비즈니스 로직과 렌더링 처리 분리
+- 스타일링 분리
+- if else 조건 렌더링은 조건 연산자 사용
+- if elseif else... 조건 렌더링은 if 조건문 사용
+- props는 알파벳순으로 정렬
+- props와 state는 비구조화 할당 사용
+- 메모이제이션 사용
+- 이벤트와 타이머는 언마운트 과정에서 제거
+- List Key 속성 값으로 ID 사용
+- React Dev Tools 사용
 
 <br>
