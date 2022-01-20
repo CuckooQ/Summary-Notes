@@ -36,6 +36,10 @@
 - 원격 저장소 연결
 - 파일 추적 추가
 - 커밋
+- 커밋 이력
+- 커밋 선택 이력 보기
+- 커밋 리셋
+- 커밋 되돌리기
 - 푸시
 - 클론
 - 풀
@@ -43,6 +47,7 @@
 - 원격 브랜치 선택
 - 원격 브랜치 생성 & 선택
 - 원격 브랜치 삭제
+- 브랜치 병합
 
 <br>
 
@@ -186,6 +191,25 @@
 
 - git commit -m "message"
 
+### 커밋 이력
+
+- git log -p
+
+### 커밋 선택 이력 보기
+
+- git show 'commit ID'
+
+### 커밋 리셋
+
+- git reset --hard 'commit ID'
+- 이전까지의 커밋 이력을 남기지 않고 완전히 되돌림
+- 협업의 경우 지양
+
+### 커밋 되돌리기
+
+- git revert 'commit ID'
+- 이전까지의 커밋 이력을 남기고 되돌리는 이력도 남기는 되돌림
+
 ### 푸시
 
 - git push 'local branch' 'remote branch'
@@ -200,7 +224,7 @@
 
 ### 원격 브랜치 목록
 
-- git branch -r
+- git branch -a
 
 ### 원격 브랜치 선택
 
@@ -214,5 +238,9 @@
 ### 원격 브랜치 삭제
 
 - git push origin --delete 'remote branch'
+
+### 브랜치 병합
+
+- git merge 'branch'
 
 <br>
