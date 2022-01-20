@@ -42,43 +42,47 @@
 
 #### [16. Background](#Background)
 
-#### [17. Transition](#Transition)
+#### [17. Clipping](#Clipping)
 
-#### [18. Transform](#Transform)
+#### [18. Shape](#Shape)
 
-#### [19. Perspective](#Perspective)
+#### [19. Transition](#Transition)
 
-#### [20. Animation](#Animation)
+#### [20. Transform](#Transform)
 
-#### [21. Outline](#Outline)
+#### [21. Perspective](#Perspective)
 
-#### [22. Text Style](#Text-Style)
+#### [22. Animation](#Animation)
+
+#### [23. Outline](#Outline)
+
+#### [24. Text Style](#Text-Style)
 
 - 폰트
 - 텍스트 레이아웃
 
-#### [23. Box Model](#Box-Model)
+#### [25. Box Model](#Box-Model)
 
 - 구성
 - 기타 프로퍼티
 - 특징
 
-#### [24. Placement](#Placement)
+#### [26. Placement](#Placement)
 
 - Float
 - Position
 - Centering
 
-#### [25. Display](#Display)
+#### [27. Display](#Display)
 
-#### [26. Layout](#Layout)
+#### [28. Layout](#Layout)
 
 - Grid
 - Flex Box
 
-#### [27. SCSS](#SCSS)
+#### [29. SCSS](#SCSS)
 
-#### [28. Styled Components](#Styled-Components)
+#### [30. Styled Components](#Styled-Components)
 
 - 정의
 - 특징
@@ -362,7 +366,7 @@
 
 ## Stack Level
 
-### Property
+### property
 
 - z-index
 
@@ -375,7 +379,7 @@
 
 ## Creating New Stacking Context
 
-### Property
+### property
 
 - isolation
 
@@ -391,6 +395,12 @@
 - background-attachment
   - scroll (default)
   - fixed
+- background-clip
+  - 배경 차지 영역
+  - border-box
+  - padding-box
+  - content-box
+  - text
 - background-color
 - background-image
   - none
@@ -406,6 +416,43 @@
   - auto
   - cover
   - contain
+
+<br>
+
+## Clipping
+
+### property
+
+- clip-path
+
+### value
+
+- none
+- url()
+- circle()
+- ellipse()
+- polygon()
+- inset()
+
+### 값 생성 방법
+
+- clip-path maker 사이트에서 생성
+
+<br>
+
+## Shape
+
+### property
+
+- shape-outside
+
+### value
+
+- url()
+- circle()
+- ellipse()
+- polygon()
+- inset()
 
 <br>
 
@@ -537,8 +584,23 @@
 ### 텍스트 레이아웃
 
 - text-align
+- vertical-align
+  - 다른 인라인 요소에 상대적으로 정렬
+  - baseline
+  - super
+    - 부모의 기준선 위로 정렬
+  - sub
+    - 부모의 기준선 아래로 정렬
+  - text-top
+    - 요소의 상위를 부모의 상위와 동일 정렬
+  - text-bottom
+    - 요소의 하위를 부모의 하위와 동일 정렬
+  - middle
 - text-indent
 - writing-mode
+  - horizontal-tb
+  - vertical-rl
+  - vertical-lr
 - letter-spacing
 - word-spacing
 - line-height
@@ -564,6 +626,13 @@
 - overflow-wrap
   - normal
   - break-word
+- user-select
+  - 텍스트 선택 가능 여부
+  - auto
+  - none
+  - text
+  - all
+    - 해당 텍스트 클릭 시 모두 선택
 
 <br>
 
