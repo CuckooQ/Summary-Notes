@@ -214,7 +214,7 @@
 
 - 실제 DOM이 필요한 경우에만 렌더링할 목적으로, 임시적으로 변경된 전체 화면을 렌더링해놓는 DOM
 
-### 동작 과정
+### 동작 과정 (Reconciliation)
 
 - 변경 발생
 - Virtual DOM에 변경된 전체화면 렌더링
@@ -1097,8 +1097,12 @@ function update() {
 function update() {
   setValue((prevValue) => prevValue + 1);
 }
-
 ```
+
+#### 사용 위치
+
+- 반복문, 조건문, 중첩 함수 내에서 사용 X
+- 함수형 컴포넌트 내에서만 사용
 
 ### 종류
 
@@ -1109,11 +1113,18 @@ function update() {
 
 #### useEffect
 
-- 컴포넌트가 렌더링될 때마다 특정 작업 실행 목적의 훅
+- 렌더링 이후마다 특정 작업 실행 목적의 훅
 - componentDidMount, componentDidUpdate, componentWillUnmount 생명주기 구현 가능
-- useEffect(() =>
-  &nbsp; &nbsp;componentDidMount | componentWillUpdate Action
-  &nbsp; &nbsp;return () => {componentWillUnmount Action}, [states])
+- 의존값이 빈 배열인 경우 첫 렌더링에서만 동작
+
+```
+useEffect(() =>
+  componentDidMount | componentWillUpdate Action
+  return () => {
+    componentWillUnmount Action
+  }, [states]
+)
+```
 
 #### useReducer
 
