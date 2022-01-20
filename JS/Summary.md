@@ -839,6 +839,9 @@
 
 ### 함수
 
+- Object.is(val1, val2)
+  - 두 값의 일치 여부 반환
+  - === 와 완전히 같지 않음
 - Object.keys(obj)
 - Object.values(obj)
 - Object.entries(obj)
