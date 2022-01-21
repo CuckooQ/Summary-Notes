@@ -196,6 +196,8 @@
 - Plugin
 - 방법
 
+#### [30. Storybook](#Storybook)
+
 <br>
 
 ---
@@ -1600,5 +1602,138 @@ useEffect(() =>
 - 로그아웃 API 실행
 - 토큰 제거
 - 로그인 화면 이동
+
+<br>
+
+## Storybook
+
+### 정의
+
+- 컴포넌트 중심의 UI 개발 환경
+
+### 특징
+
+- 컴포넌트의 시각화
+- 컴포넌트의 문서화
+- 컴포넌트의 자동 테스트
+- 앱과 독립된 환경 동작
+
+### 제공 개발 방식
+
+- CDD (Component Driven Development)
+- SDD (Story Driven Development)
+
+### 설치 방법
+
+- npx -p @storybook/cli sb init
+
+### 실행 방법
+
+- 개발 모드에서 앱과 함께 실행
+
+### 개발 플로우
+
+- Make the behavior flow
+- Put components as stories
+- Embody atoms, pages, flows in stories
+
+### 스토리
+
+#### 정의
+
+- 컴포넌트가 어떻게 렌더링되어야 하는지 결정하는 복수의 매개변수를 가지는 함수 컴포넌트
+
+#### 유형
+
+- 단일 컴포넌트
+- 복수 컴포넌트
+- 페이지
+- 기능 시나리오
+
+#### 파일명
+
+- componentName.story.js
+
+#### 디렉토리
+
+- stories/
+
+#### 문법
+
+- CSF (Component Story Form)
+
+#### 구성
+
+- Default
+  - 스토리 메타데이터
+- Stories
+  - 각각 args를 지정한 복수의 스토리
+- Play
+  - 시나리오 테스트 목적의 함수
+
+#### 형식
+
+```
+import React from "react";
+import {within, userEvent} from "@storybook/testing-library";
+import Component from "./Component";
+
+export default {
+  title: "Component Name",
+  component: Component,
+  parameters: {
+    ...
+  },
+  decorators: [
+    (story) => (
+      ...
+    )
+  ]
+}
+
+const Template = (args) => <Component {...args} />
+
+export const StoryName1 = Template.bind({});
+StoryName1.args = {
+  ...
+}
+export const StoryName2 = Template.bind({});
+StoryName2.args = {
+  ...
+}
+export const StoryName3 = Template.bind({});
+StoryName3.args = {
+  ...
+}
+StoryName3.play = async ({canvasElement} => {
+  const canvas = within(canvasElement);
+  await userEvent.type(canvas.getByTestId("elementId"), "value", {delay: msec});
+  await userEvent.click(canvas.getByRole("roleName"));
+});
+
+// Template.bind({}) : Function Copy
+```
+
+### Canvas Toolbar
+
+- Zooming
+- Background Color
+- Viewport Size
+
+### Docs
+
+- 컴포넌트의 코드로 추론해서 자동으로 생성된 컴포넌트 정보
+
+### Addon
+
+- 추가 플러그인
+
+#### Controls
+
+- Args 컨트롤러 제공
+
+#### Actions
+
+- Props 액션 출력 제공
 
 <br>
