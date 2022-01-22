@@ -1667,26 +1667,64 @@ useEffect(() =>
 - Default
   - 스토리 메타데이터
 - Stories
-  - 각각 args를 지정한 복수의 스토리
+  - 각각 인수를 지정한 복수의 스토리
 - Play
   - 시나리오 테스트 목적의 함수
+  - addon-interactions와 함께 사용 추천
+  - userEvent
+    - clear
+      - input 텍스트 클리어
+    - click
+    - dbClick
+    - keyboard
+      - 키보드 이벤트
+    - type
+    - selectOptions
+      - 특정 셀렉트의 특정 옵션 선택
+    - deselectOptions
+      - 특정 셀렉트의 특정 옵션 선택 해제
+    - hover
+    - unhover
 
 #### 형식
 
 ```
+// storybook/preview.js
+// 모든 스토리에 적용할 글로벌 설정
+export const parameters = {
+  ...
+}
+
+// componentName.story.js
 import React from "react";
 import {within, userEvent} from "@storybook/testing-library";
 import Component from "./Component";
 
 export default {
-  title: "Component Name",
+  title: "TopGroupName/LowerGroupName/ComponentName",
   component: Component,
+  // 렌더링되는 방식을 정의하는 인수 집합
+  args: {
+    ...
+  }
+  // 스토릭북 기능과 애드온의 동작 제어 매개변수 집합
   parameters: {
     ...
+    options: {
+      // 스토리 정렬 임의 설정 가능
+      storySort: {
+        method: "",
+        order: [...],
+        locales: "",
+      }
+    }
   },
+  // 대상 스토리의 마크업 래퍼
   decorators: [
     (story) => (
-      ...
+      <TagName style={{ ... }}>
+        <Story />
+      </TagName>
     )
   ]
 }
@@ -1694,6 +1732,7 @@ export default {
 const Template = (args) => <Component {...args} />
 
 export const StoryName1 = Template.bind({});
+// 렌더링되는 방식을 정의하는 인수 집합
 StoryName1.args = {
   ...
 }
@@ -1726,14 +1765,123 @@ StoryName3.play = async ({canvasElement} => {
 
 ### Addon
 
+#### 정의
+
 - 추가 플러그인
 
-#### Controls
+#### 설정 방법
 
-- Args 컨트롤러 제공
+- storybook폴더의 main.js의 addons 프로퍼티의 배열값에 추가
 
-#### Actions
+```
+// .storybook/main.js
+module.exports = {
+  stories: [],
+  addons: [
+    ... // 추가할 애드온
+  ]
+}
+```
 
-- Props 액션 출력 제공
+#### 기본 애드온
+
+- Controls
+  - Args 컨트롤러 제공
+- Actions
+  - Props 액션 출력 제공
+
+### Test
+
+#### Visual Test
+
+- 모든 스토리의 스크릿샷을 찍고 커밋-투-커밋 방식으로 비교해서 변경사항을 식별하는 테스트
+- Chromatic 애드온 설치 & 설정 필요
+  - 스토리북용 클라우드 서비스
+  - npm i --save-dev chromatic
+  - npx chromatic --project-token projectTokenName
+
+#### Accessibility Test
+
+- WCAG 규칙과 모범 사례를 기반으로 렌더링된 DOM 테스트
+- a11y 애드온 설치 & 설정 필요
+  - npm i --save-dev @storybook/addon-a11y
+  - storybook/main.js의 애드온 설정에 추가
+  - story의 parameters에 a11y 프로퍼티 추가
+  - Jest로 테스트 자동화 가능
+
+#### Interaction Test
+
+- 이벤트를 주고 해당 이벤트로 인한 상태의 변화가 올바른지 테스트
+- play 사용
+
+#### Snapshot Test
+
+- storyshots 애드온 설치 & 설정 필요
+  - npm i --save-dev @storybook/addon-storyshots
+- storybook.test.js 추가 필요
+
+```
+import initStoryshots from "@storybook/addon-storyshots";
+initStoryshots();
+```
+
+- 스냅샷 디렉토리 임의 설정
+
+  - npm i -D @storybook/addon-storyshots-puppeteer & puppeteer
+
+  ```
+  import path from "path";
+  import initStoryshots from "@storybook/addon-storyshots";
+  import {imageSnapshot} from "@storybook/addon-storyshots-puppeteer";
+
+  const getMatchOptions = ({context: {fileName}}) => {
+    const snapshotPath = path.join(path.dirname(fileName), "customDirectoryName")
+    return { customSnapshotsDir: snapshotPath};
+  };
+
+  initStoryshots({
+    test: imageSnapshot({
+      getMatchOptions,
+    })
+  });
+  ```
+
+### 배포
+
+#### 정적 웹 어플리케이션
+
+- npm run build-storybook
+- npx http-server builtFileDirectory
+
+#### Chromatic
+
+- 자동 배포
+
+  - 코드를 저장소에 푸시할 경우 Github Actions을 이용한 자동 배포 방식
+  - .github/workflows/chromatic.yml 설정
+
+  ```
+  # Workflow Name
+  name: "Chromatic Publish"
+  # Event for the workflow
+  on: push
+  # List of jobs
+  jobs:
+    test:
+      # Operating System
+      runs-on: ubuntu-latest
+      # Job Steps
+      steps:
+        - uses: actions/checkout@v1
+        - run: yarn
+        # Adds Chromatic as a step in the workflow
+        - uses: chromaui/action@v1
+        # Options Required for Chormatic's Github Action
+        with:
+          # secrets: Security Environment Variables provided in Github
+          # Chromatic ProjectToken
+          projectToken: ${{secrets.CHROMATIC_PROJECT_TOKEN}}
+          token: ${{secrets.GITHUB_TOKEN}}
+  ```
 
 <br>
