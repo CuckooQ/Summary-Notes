@@ -143,5 +143,28 @@
 
 - ESLint 룰 직접 설정
 - 자동 설정된 룰 중에 특정 룰을 비활성화하거나 특정 룰을 변경하는 등의 설정
+- react/prop-types
+  - 리액트 린트 환경에서 propTypes의 props 타입체크 처리 여부 
+  - 0 / 1
+- @typescript-eslint/explicit-module-boundary-types
+  - 타입스크립트 린트 환경에서 function return 타입 명시 여부 
+  - 0 / 1
+- @typescript-eslint/no-empty-interface
+  - 타입스크립트 린트 환경에서 빈 인터페이스 선언 금지 여부
+  - 0 / 1
+- @typescript-eslint/ban-ts-comment
+  - 타입스크립트 린트 환경에서 @ts-<directive> 주석 금지 여부
+  - 0 / 1
+- @typescript-eslint/no-empty-function
+  - 타입스크립트 린트 환경에서 빈 함수 선언 금지 여부
+  - 0 / 1
+- @typescript-eslint/ban-types
+  - 타입스크립트 린트 환경에서 사용되는 특정 타입의 금지 여부
+  - 0 / 1
+- no-empty-function
+  - 빈 함수 선언 금지 여부
+  - 0 / 1
+- prettier/prettier: ['error', {endOfLine: 'auto'}]
+  - Delete 'CR' eslint (prettier/prettier) ESLint 에러 해결
 
 <br>
