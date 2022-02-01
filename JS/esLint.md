@@ -14,6 +14,8 @@
 
 #### [5. 설정 항목](#설정-항목)
 
+#### [6. 자동 고침 설정](#자동-고침-설정)
+
 <br>
 
 ---
@@ -166,5 +168,18 @@
   - 0 / 1
 - prettier/prettier: ['error', {endOfLine: 'auto'}]
   - Delete 'CR' eslint (prettier/prettier) ESLint 에러 해결
+
+<br>
+
+## 자동 고침 설정
+
+- 명령 팔레트에서 setting.json을 입력한 후 기본설정:설정 열기(JSON) 선택
+- 이하의 코드 추가
+  ```
+  "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true 
+    },
+    "editor.formatOnSave": true
+  ```
 
 <br>
